@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced LED Display Cost Estimator</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>LED Display Cost Estimator</h1>
+      <p>Get an instant estimate for your LED display rental or purchase!</p>
+    </header>
+
+    <form id="cost-estimator" class="form">
+      <!-- Screen Size -->
+      <div class="form-group">
+        <label for="width">Screen Width (ft)</label>
+        <input type="number" id="width" placeholder="Enter width">
+      </div>
+      <div class="form-group">
+        <label for="height">Screen Height (ft)</label>
+        <input type="number" id="height" placeholder="Enter height">
+      </div>
+
+      <!-- Pixel Pitch -->
+      <div class="form-group">
+        <label for="pixelPitch">Pixel Pitch (mm)</label>
+        <select id="pixelPitch">
+          <option value="1.5">1.5mm</option>
+          <option value="2.9">2.9mm</option>
+          <option value="4.0">4.0mm</option>
+        </select>
+      </div>
+
+      <!-- Usage Type -->
+      <div class="form-group">
+        <label for="usageType">Usage Type</label>
+        <select id="usageType">
+          <option value="indoor">Indoor</option>
+          <option value="outdoor">Outdoor</option>
+        </select>
+      </div>
+
+      <!-- Rental or Purchase -->
+      <div class="form-group">
+        <label>Rental or Purchase</label>
+        <div class="radio-group">
+          <label><input type="radio" name="rentOrBuy" value="rental" checked> Rental</label>
+          <label><input type="radio" name="rentOrBuy" value="purchase"> Purchase</label>
+        </div>
+      </div>
+
+      <!-- Rental Duration -->
+      <div class="form-group" id="rental-duration-group">
+        <label for="duration">Rental Duration (days)</label>
+        <input type="number" id="duration" placeholder="Enter duration">
+      </div>
+
+      <!-- Optional Features -->
+      <div class="form-group">
+        <label>Additional Features</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="mounting"> Mounting Structure</label>
+          <label><input type="checkbox" id="videoProcessor"> Video Processor</label>
+          <label><input type="checkbox" id="delivery"> Delivery/Installation</label>
+        </div>
+      </div>
+
+      <!-- Advanced Configuration -->
+      <div class="form-group">
+        <label>Display Configuration</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="redundantPower"> Redundant Power Supply</label>
+          <label><input type="checkbox" id="backupModules"> Backup Modules</label>
+          <label><input type="checkbox" id="remoteControl"> Remote Management System</label>
+        </div>
+      </div>
+
+      <!-- Cost Display -->
+      <div class="cost-display">
+        <h2>Estimated Total Cost:</h2>
+        <p id="totalCost" class="cost">$0.00</p>
+      </div>
+
+      <!-- Generate PDF -->
+      <button type="button" id="generatePDF" class="btn">Download Estimate PDF</button>
+
+      <!-- Add contact form -->
+      <div class="contact-form hidden" id="contactForm">
+        <h3>Request Detailed Quote</h3>
+        <input type="text" placeholder="Company Name">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone">
+        <textarea placeholder="Additional Requirements"></textarea>
+      </div>
+    </form>
+  </div>
+  
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+</body>
+</html>
